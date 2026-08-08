@@ -618,13 +618,13 @@ for i in range(3):
 ---
 
 **本章重点**
-- ✅ for循环遍历序列
-- ✅ range()生成数字序列
-- ✅ enumerate()同时获取索引和元素
-- ✅ break跳出循环
-- ✅ continue跳过本次循环
-- ✅ else在循环正常结束时执行
-- ✅ zip()同时遍历多个序列
+- for循环遍历序列
+- range()生成数字序列
+- enumerate()同时获取索引和元素
+- break跳出循环
+- continue跳过本次循环
+- else在循环正常结束时执行
+- zip()同时遍历多个序列
 
 **记住**
 - for循环用于遍历已知次数的情况

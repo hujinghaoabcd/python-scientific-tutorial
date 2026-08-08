@@ -483,9 +483,9 @@ Pandas：工程师的工具
 ### 前提条件
 
 在安装Pandas之前，确保你已经：
-- ✅ 安装了Python 3（建议Python 3.8或更高版本）
-- ✅ 安装了pip（Python包管理工具）
-- ✅ 知道如何打开命令行
+- 安装了Python 3（建议Python 3.8或更高版本）
+- 安装了pip（Python包管理工具）
+- 知道如何打开命令行
 
 **检查Python版本**：
 ```bash
@@ -2228,12 +2228,12 @@ print("\n" + "=" * 70)
 ## 下一步
 
 太棒了！现在你已经：
-- ✅ 了解了Pandas是什么，为什么要学它
-- ✅ 知道了Pandas的优势和应用场景
-- ✅ 成功安装了Pandas
-- ✅ 运行了第一个Pandas程序
-- ✅ 了解了Pandas的核心概念（Series、DataFrame）
-- ✅ 完成了5个实战练习
+- 了解了Pandas是什么，为什么要学它
+- 知道了Pandas的优势和应用场景
+- 成功安装了Pandas
+- 运行了第一个Pandas程序
+- 了解了Pandas的核心概念（Series、DataFrame）
+- 完成了5个实战练习
 
 **你已经迈出了数据分析的第一步！**
 
@@ -2281,11 +2281,11 @@ Pandas的大门已经为你敞开，接下来我们将深入学习：
 
 ### 技能清单
 
-- ✅ 能够安装Pandas
-- ✅ 能够导入Pandas并创建Series和DataFrame
-- ✅ 了解Pandas的核心概念
-- ✅ 能够做简单的数据操作
-- ✅ 知道如何查文档和找资源
+- 能够安装Pandas
+- 能够导入Pandas并创建Series和DataFrame
+- 了解Pandas的核心概念
+- 能够做简单的数据操作
+- 知道如何查文档和找资源
 
 ### 常用命令
 

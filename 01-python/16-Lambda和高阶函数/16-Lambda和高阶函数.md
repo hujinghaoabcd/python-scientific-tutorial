@@ -121,13 +121,13 @@ total = reduce(lambda x, y: x + y, expenses)
 
 **1. 代码更简洁**
 ```python
-# ❌ 不用Lambda和高阶函数：啰嗦
+# 不用Lambda和高阶函数：啰嗦
 numbers = [1, 2, 3, 4, 5]
 squared = []
 for num in numbers:
     squared.append(num ** 2)
 
-# ✅ 用Lambda和map：一行即可完成。
+# 用Lambda和map：一行即可完成。
 squared = list(map(lambda x: x ** 2, numbers))
 ```
 
@@ -808,7 +808,7 @@ print(students)
 ### 什么时候用Lambda？
 
 ```python
-# ✅ 适合用Lambda
+# 适合用Lambda
 # 1. 简单的单行函数
 numbers.sort(key=lambda x: x % 10)
 
@@ -822,7 +822,7 @@ result = filter(lambda x: x > 0, values)
 ### 什么时候用普通函数？
 
 ```python
-# ✅ 应该用普通函数
+# 应该用普通函数
 # 1. 复杂逻辑
 def process_data(data):
     if not data:
@@ -964,12 +964,12 @@ students = [
 ---
 
 **本章重点**
-- ✅ Lambda表达式语法
-- ✅ map()、filter()、reduce()
-- ✅ 高阶函数的使用
-- ✅ 函数式编程思想
-- ✅ Lambda vs 普通函数
-- ✅ 避免常见陷阱
+- Lambda表达式语法
+- map()、filter()、reduce()
+- 高阶函数的使用
+- 函数式编程思想
+- Lambda vs 普通函数
+- 避免常见陷阱
 
 **记住**
 - Lambda适合简单函数

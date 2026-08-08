@@ -577,11 +577,11 @@ import json
 
 data = {"name": "张三"}
 
-# ❌ 错误 - 中文变成Unicode转义
+# 错误 - 中文变成Unicode转义
 json_str = json.dumps(data)
 print(json_str)  # {"name": "\u5f20\u4e09"}
 
-# ✅ 正确 - 保持中文
+# 正确 - 保持中文
 json_str = json.dumps(data, ensure_ascii=False)
 print(json_str)  # {"name": "张三"}
 ```
@@ -591,12 +591,12 @@ print(json_str)  # {"name": "张三"}
 ```python
 import csv
 
-# ❌ 错误 - Windows上会出现空行
+# 错误 - Windows上会出现空行
 with open("data.csv", "w") as f:
     writer = csv.writer(f)
     writer.writerows(data)
 
-# ✅ 正确
+# 正确
 with open("data.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerows(data)
@@ -613,10 +613,10 @@ data = {
     "tuple": (1, 2, 3)
 }
 
-# ❌ 错误 - TypeError
+# 错误 - TypeError
 # json.dumps(data)
 
-# ✅ 正确 - 转换为支持的类型
+# 正确 - 转换为支持的类型
 data = {
     "time": datetime.now().isoformat(),
     "tuple": list((1, 2, 3))
@@ -629,7 +629,7 @@ json.dumps(data)
 ### 1. 始终指定编码
 
 ```python
-# ✅ 推荐
+# 推荐
 with open("data.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False)
 ```
@@ -637,13 +637,13 @@ with open("data.json", "w", encoding="utf-8") as f:
 ### 2. 使用DictReader/DictWriter
 
 ```python
-# ✅ 推荐 - 更清晰
+# 推荐 - 更清晰
 with open("data.csv", "r") as f:
     reader = csv.DictReader(f)
     for row in reader:
         print(row["name"])
 
-# ❌ 不推荐 - 需要手动处理索引
+# 不推荐 - 需要手动处理索引
 with open("data.csv", "r") as f:
     reader = csv.reader(f)
     for row in reader:
@@ -653,7 +653,7 @@ with open("data.csv", "r") as f:
 ### 3. 处理大文件时逐行读取
 
 ```python
-# ✅ 推荐 - 内存友好
+# 推荐 - 内存友好
 with open("large.json", "r") as f:
     for line in f:
         item = json.loads(line)
@@ -713,12 +713,12 @@ with open("large.json", "r") as f:
 ---
 
 **本章重点**
-- ✅ 掌握JSON序列化和反序列化
-- ✅ 掌握CSV读写操作
-- ✅ 理解数据类型映射
-- ✅ 处理复杂数据结构
-- ✅ 实现数据格式转换
-- ✅ 避免常见陷阱
+- 掌握JSON序列化和反序列化
+- 掌握CSV读写操作
+- 理解数据类型映射
+- 处理复杂数据结构
+- 实现数据格式转换
+- 避免常见陷阱
 
 **记住**
 - JSON中文要ensure_ascii=False

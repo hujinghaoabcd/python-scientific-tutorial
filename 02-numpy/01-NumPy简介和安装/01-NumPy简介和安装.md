@@ -647,8 +647,8 @@ print("转回NumPy：\n", back_to_numpy)
 ### 前提条件
 
 在安装NumPy之前，确保你已经：
-- ✅ 安装了Python 3（建议Python 3.8或更高版本）
-- ✅ 知道如何打开命令行（Windows的cmd或PowerShell，macOS/Linux的Terminal）
+- 安装了Python 3（建议Python 3.8或更高版本）
+- 知道如何打开命令行（Windows的cmd或PowerShell，macOS/Linux的Terminal）
 
 **检查Python版本**：
 ```bash
@@ -1868,12 +1868,12 @@ pip install matplotlib
 ## 下一步
 
 太棒了！现在你已经：
-- ✅ 了解了NumPy是什么，为什么要学它
-- ✅ 知道了NumPy的优势和应用场景
-- ✅ 成功安装了NumPy
-- ✅ 运行了第一个NumPy程序
-- ✅ 了解了NumPy的核心概念
-- ✅ 完成了几个实战练习
+- 了解了NumPy是什么，为什么要学它
+- 知道了NumPy的优势和应用场景
+- 成功安装了NumPy
+- 运行了第一个NumPy程序
+- 了解了NumPy的核心概念
+- 完成了几个实战练习
 
 **你已经迈出了数据科学的第一步！**
 
@@ -1921,11 +1921,11 @@ NumPy的大门已经为你敞开，接下来我们将深入学习：
 
 ### 技能清单
 
-- ✅ 能够安装NumPy
-- ✅ 能够导入NumPy并创建数组
-- ✅ 了解NumPy的基本概念
-- ✅ 能够做简单的数组运算
-- ✅ 知道如何查文档和找资源
+- 能够安装NumPy
+- 能够导入NumPy并创建数组
+- 了解NumPy的基本概念
+- 能够做简单的数组运算
+- 知道如何查文档和找资源
 
 ### 常用命令
 
