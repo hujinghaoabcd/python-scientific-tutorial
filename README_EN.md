@@ -82,21 +82,6 @@ jupyter lab
 | 05 | **Statsmodels** | OLS, GLM, mixed models, robust regression, time series, tests, survival analysis | [Open](05-statsmodels/) |
 | 06 | **LinearModels** | panel data, fixed/random effects, IV/2SLS, asset pricing, SUR/3SLS, Fama–MacBeth | [Open](06-linearmodels/) |
 
-## 🔎 Search Topics
-
-Python tutorial, NumPy tutorial, Pandas tutorial, SciPy tutorial, Statsmodels tutorial, LinearModels tutorial, scientific computing, data analysis, statistical modeling, numerical methods, linear regression, time series, panel data, instrumental variables, 2SLS, SUR, Fama-MacBeth.
-
-## 🧪 Quality Checks
-
-Recommended environment: **Python 3.12–3.14**.
-
-Run the repository validator with:
-
-```bash
-python scripts/validate_tutorial.py
-```
-
-GitHub Actions runs the same validation for pushes and pull requests.
 
 ## 🤝 Contributing
 

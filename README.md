@@ -128,20 +128,6 @@ python-scientific-tutorial/
 └── LICENSE
 ```
 
-## 🔎 你可以在这里找到
-
-`Python tutorial` · `NumPy tutorial` · `Pandas tutorial` · `SciPy tutorial` · `Statsmodels tutorial` · `LinearModels tutorial` · `scientific computing` · `data analysis` · `statistical modeling` · `numerical methods` · `linear regression` · `time series` · `panel data` · `instrumental variables` · `2SLS` · `SUR` · `Fama-MacBeth`
-
-## ✅ 质量检查
-
-仓库包含轻量级检查脚本，用于验证模块结构、Markdown 本地链接、Notebook JSON 和已知废弃 API：
-
-```bash
-python scripts/validate_tutorial.py
-```
-
-同样的检查会由 GitHub Actions 在 `main` 推送和 Pull Request 时自动执行。
-
 ## 🤝 参与贡献
 
 欢迎修正错误、改善解释、更新新版本兼容性或补充真正重要的科学计算主题。
