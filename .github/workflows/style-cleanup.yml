@@ -1,0 +1,88 @@
+name: Content cleanup
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clean repetitive wording
+        shell: python
+        run: |
+          from pathlib import Path
+
+          replacements = [
+              ("让我给你几个无法拒绝的理由", "可以先看看几个最直接的理由"),
+              ("超级友好", "比较友好"),
+              ("用途超级广泛，几乎无所不能", "用途非常广泛"),
+              ("社区超级强大，遇到问题不孤单", "社区成熟，学习资料丰富"),
+              ("功能超级强大", "功能很强大"),
+              ("缩进（超级重要！）", "缩进（很重要）"),
+              ("超级重要！", "很重要"),
+              ("超级方便！", "很方便"),
+              ("超级方便", "很方便"),
+              ("超级实用！", "很实用"),
+              ("超级实用", "很实用"),
+              ("Excel的超级进化版", "Excel之外的可编程数据处理方式"),
+              ("快到飞起！", "速度优势很明显"),
+              ("效率高到飞起！", "效率会高很多"),
+              ("一行代码，瞬间搞定！", "几行代码即可完成。"),
+              ("几行代码，瞬间搞定！", "几行代码即可完成。"),
+              ("一行代码搞定", "一行代码即可完成"),
+              ("一行搞定！", "一行即可完成"),
+              ("一行搞定。", "一行即可完成。"),
+              ("天堂模式", "使用 Pandas"),
+              ("开了挂的Excel + Python的灵活性", "Excel式表格操作 + Python的灵活性"),
+              ("卡得要死", "操作可能变得卡顿"),
+              ("公式写到怀疑人生", "复杂公式会越来越难维护"),
+              ("复制粘贴到手软", "需要大量复制粘贴"),
+              ("要改100次，累死！", "需要重复修改很多次，既耗时也容易出错。"),
+              ("复制粘贴，累死！", "需要反复复制粘贴，比较耗时。"),
+              ("累死了！而且容易出错！", "步骤重复，而且容易出错。"),
+              ("累得要死！", "会比较费时间。"),
+              ("10万行数据？秒开！", "10万行数据也可以用代码批量处理"),
+              ("处理缺失值？自动搞定", "处理缺失值？可以直接调用相应方法"),
+              ("时间序列处理：处理日期时间数据超方便", "时间序列处理：提供方便的日期时间数据工具"),
+              ("下载速度会快很多，从几KB/s提升到几MB/s！", "配置合适的镜像后，通常可以改善下载速度。"),
+              ("继续加油！", ""),
+              ("✅", ""),
+              ("❌", ""),
+          ]
+
+          changed = []
+          for path in Path(".").rglob("*"):
+              if not path.is_file() or path.suffix.lower() not in {".md", ".ipynb"}:
+                  continue
+              text = path.read_text(encoding="utf-8")
+              new = text
+              for old, replacement in replacements:
+                  new = new.replace(old, replacement)
+              if new != text:
+                  path.write_text(new, encoding="utf-8", newline="")
+                  changed.append(str(path))
+
+          print(f"changed files: {len(changed)}")
+          for path in changed:
+              print(path)
+
+      - name: Commit content changes
+        shell: bash
+        run: |
+          rm -f .github/workflows/style-cleanup.yml
+          git config user.name "hujinghaoabcd"
+          git config user.email "42744442+hujinghaoabcd@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "内容修改"
+          git push origin main
