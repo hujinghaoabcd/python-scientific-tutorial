@@ -1,0 +1,12 @@
+numpy>=2.0,<3
+pandas>=3.0,<4
+scipy>=1.17,<2
+statsmodels>=0.14.6,<0.15
+linearmodels>=7,<8
+matplotlib>=3.9
+seaborn>=0.13
+scikit-learn>=1.6
+openpyxl>=3.1
+h5py>=3.12
+pillow>=11
+jupyterlab>=4.3
