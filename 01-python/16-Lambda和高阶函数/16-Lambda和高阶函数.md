@@ -127,7 +127,7 @@ squared = []
 for num in numbers:
     squared.append(num ** 2)
 
-# ✅ 用Lambda和map：一行搞定！
+# ✅ 用Lambda和map：一行即可完成。
 squared = list(map(lambda x: x ** 2, numbers))
 ```
 

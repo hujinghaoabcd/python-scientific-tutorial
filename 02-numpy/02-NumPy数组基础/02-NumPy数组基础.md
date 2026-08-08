@@ -1336,7 +1336,7 @@ import numpy as np
 a = np.array([1, 2, 3, 4, 5])
 b = np.array([10, 20, 30, 40, 50])
 
-result = a + b  # 一行搞定！
+result = a + b  # 一行即可完成。
 print(result)  # [11 22 33 44 55]
 ```
 

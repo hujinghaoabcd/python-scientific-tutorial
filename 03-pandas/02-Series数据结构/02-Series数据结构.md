@@ -140,7 +140,7 @@ scores = pd.Series([85, 92, 78, 95, 88],
 print(scores["张三"])  # 85，知道是张三的成绩
 
 # 优势2：支持向量化运算，简洁高效
-result = scores + 10  # 所有成绩加10分，一行搞定！
+result = scores + 10  # 所有成绩加10分，一行即可完成。
 print(result)
 ```
 
