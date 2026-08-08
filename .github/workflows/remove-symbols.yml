@@ -1,0 +1,56 @@
+name: Content cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/remove-symbols.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove decorative check and cross symbols
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          changed = []
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in {'.md', '.ipynb'}:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              new = text.replace('✅ ', '').replace('❌ ', '').replace('✅', '').replace('❌', '')
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+                  changed.append(path.as_posix())
+
+          print(f'updated {len(changed)} files')
+          for item in changed:
+              print(item)
+          PY
+
+      - name: Validate repository
+        run: python scripts/validate_tutorial.py
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "hujinghaoabcd"
+          git config user.email "42744442+hujinghaoabcd@users.noreply.github.com"
+          git rm .github/workflows/remove-symbols.yml
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "内容修改"
+          git push origin main
