@@ -2854,4 +2854,4 @@ Series是Pandas的基础，掌握好Series，学习DataFrame会非常顺利！
 - Pandas用户指南：https://pandas.pydata.org/docs/user_guide/index.html
 - Series API文档：https://pandas.pydata.org/docs/reference/series.html
 
-，数据分析之路才刚刚开始！
+数据分析之路才刚刚开始！
